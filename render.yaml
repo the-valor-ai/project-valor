@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: valor-ai-api
+    runtime: docker
+    region: oregon
+    plan: starter
+    branch: main
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: USE_OFFLINE_MODE
+        value: false
+      - key: DEFAULT_LANGUAGE
+        value: en
+      - key: API_HOST
+        value: 0.0.0.0
+      - key: API_PORT
+        value: 8000
+      - key: PYTHON_VERSION
+        value: 3.10.0
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - app/**
+        - requirements.txt
+        - Dockerfile
+        - render.yaml

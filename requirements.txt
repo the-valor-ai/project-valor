@@ -1,0 +1,21 @@
+# API Dependencies
+fastapi
+uvicorn[standard]
+python-multipart
+requests
+
+# AI/ML Dependencies
+openai>=1.0.0
+pillow
+numpy<2
+
+# Configuration
+pydantic-settings
+python-dotenv
+
+# Optional: For training custom models (can be removed if not training)
+tensorflow==2.18.0
+matplotlib
+seaborn
+scikit-learn
+pandas
